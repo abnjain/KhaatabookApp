@@ -12,14 +12,10 @@ app.get("/", (req,res) => {
     const directoryPath = path.join(__dirname, 'files');
     
     fs.readdir(directoryPath, (err, files) => {
-        if (err) {
-            console.error("Error while reading directory:", err);
-            res.status(500).send("No Files Yet");
-            return;
-        }
+        if (err) return res.status(500).send("No Hisaab Yet", err);
 
         // Filter out non-file items if needed (optional)
-        files = files.filter(file => fs.statSync(path.join(directoryPath, file)).isFile());
+        // files = files.filter(file => fs.statSync(path.join(directoryPath, file)).isFile());
 
         res.render("index", { files });
     });

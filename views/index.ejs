@@ -21,11 +21,11 @@
     <div class="bg-gray-900 h-screen">
         <h1 class="text-white p-16 text-4xl">Jainsaab's Khaatabook App</h1>
         <div class="bg-gray-700 px-10 py-8 mx-28 h-96 w-1/2 rounded-md flex flex-col overflow-hidden">
-             <% if (files && files.length > 0) { %>
+             <% if (files.length > 0) { %>
                 <div class="space-y-3 overflow-y-auto hide-scrollbar">
                     <% files.forEach(function(file) { %>
                         <div class="bg-blue-500 text-white py-2 px-6 rounded-md flex justify-between">
-                            <a href="/read/<%= file %>" class="text-lg hover:underline"><%= file %></a>
+                            <a href="/read/<%= file %>" class="text-lg hover:underline"><%= file.split(".")[0] %></a>
                             <div class="flex gap-6">
                                 <a href="/edit/<%= file %>" class="text-lg cursor-pointer"><i class="fas fa-edit text-xl"></i></a>
                                 <a href="/delete/<%= file %>" class="text-lg cursor-pointer"><i class="fas fa-trash text-xl"></i></a>
