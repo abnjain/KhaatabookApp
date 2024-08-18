@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaatabook File</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="bg-gray-900 h-screen">
+        <h1 class="text-white p-16 text-4xl">Jainsaab's Khaatabook App</h1>
+        <div class="bg-gray-700 px-10 py-8 mx-28 h-min-screen w-1/2 rounded-md flex flex-col overflow-hidden">
+            <h1 class="text-white text-2xl mb-5">File: <%= filename %></h1>
+            <form  class="flex flex-col items-center space-y-8 mb-5">
+                <textarea name="data" rows="10" cols="30" class="bg-gray-300 rounded-md resize-none p-5 w-full"><%= data %></textarea>
+                <div class="flex gap-4">
+                    <a href="/edit/<%= filename %>" class="bg-yellow-500 rounded-md px-5 py-1 text-white">Edit</a>
+                    <a href="/delete/<%= filename %>" class="bg-red-500 rounded-md px-5 py-1 text-white">Delete</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
